@@ -2,7 +2,6 @@ service: aws-billing-to-slack
 
 plugins:
   - serverless-python-requirements
-
 provider:
   name: aws
   # Sane defaults, easy for multi-account/multi-region organizations
@@ -33,7 +32,7 @@ functions:
 
     events:
       # Every day at 15:00 UTC / 10am CDT
-      - schedule: cron(0 15 * * ? *)
+      - schedule: cron(0 3 * * ? *)
 
     environment:
       SLACK_WEBHOOK_URL: ${opt:slack_url}
